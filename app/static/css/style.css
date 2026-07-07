@@ -1,6 +1,6 @@
 /* 全体のリセットと背景設定 */
 body {
-    background-color: #b1baf7;
+    background-color: #dee1f4;
     display: flex;
     justify-content: center;
     align-items: center;       /* これが原因で要素が真ん中で衝突していました */
