@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <title>診断結果</title>
+    <style>
+        body {
+            background-color: #dee1f4;
+            text-align: center;
+        }
+
+        .back {
+            text-decoration: none;
+            padding-top: 4px;
+            padding-bottom: 4px;
+            padding-right: 8px;
+            padding-left: 8px;
+            border-radius: 4px;
+            background-color: blueviolet;
+            color: white;
+        }
+        
+        .back:hover {
+            background-color: rgb(69, 18, 116);
+        }
+    </style>
+</head>
+<body>
+
+    <h1>診断結果</h1>
+
+    <p>あなたの睡眠の質は</p>
+
+    <h2>{{ result }}</h2>
+
+    <p>{{ status }}です。</p>
+
+    <div style="text-align: left; margin-left: 200px; margin-right: 200px;">
+        <hr>
+        <h3>メッセージ</h3>
+        <ul>
+            <li>{{ message }}</li>
+        </ul>
+        <hr>
+    </div>
+
+    <a href="{{url_for('index')}}" class="back">戻る</a>
+</body>
+</html>
