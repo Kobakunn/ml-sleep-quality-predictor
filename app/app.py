@@ -10,21 +10,22 @@ def index():
 @app.route("/predict", methods=["POST"])
 def predict():
     # リクエストパラメータの定義
+    age = int(request.form["age"])
     weight = float(request.form["weight"])
     height = float(request.form["height"])
-    gender = request.form["gender"]
+    # gender = request.form["gender"]
     sleep_duration = float(request.form["sleep_duration"])
     physical_activity = int(request.form["physical_activity"])
     stress_level = int(request.form["stress_level"])
     heart_rate = int(request.form["heart_rate"])
     daily_steps = int(request.form["daily_steps"])
-
+    # sleep_disorder = request.form["sleep_disorder"]
 
     # 受け取ったパラメータから、結果を返す
     bmi_category = calculate_bmi_category(height=height, weight=weight)
 
     input_df = create_input_df(
-        gender,
+        age,
         sleep_duration,
         physical_activity,
         stress_level,

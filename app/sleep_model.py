@@ -18,7 +18,7 @@ def calculate_bmi_category(height, weight):
 
 # DataFrameの定義
 def create_input_df(
-    gender,
+    age,
     sleep_duration,
     physical_activity,
     stress_level,
@@ -28,7 +28,7 @@ def create_input_df(
 ):
 
     return pd.DataFrame([{
-        "Gender": gender,
+        "Age": age,
         "Sleep Duration": sleep_duration,
         "Physical Activity Level": physical_activity,
         "Stress Level": stress_level,
@@ -40,4 +40,4 @@ def create_input_df(
 # 予測の処理
 def predict_sleep_quality(input_df):
     prediction = model.predict(input_df)[0]
-    return round(prediction, 1)
+    return int(round(prediction, 1))

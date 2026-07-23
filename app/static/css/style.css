@@ -126,6 +126,14 @@ body {
     color: #db2777;
 }
 
+.radio-group label:has(input[value="Yes"]) {
+    color: black;
+}
+
+.radio-group label:has(input[value="No"]) {
+    color: black;
+}
+
 /* ボタンのスタイル */
 .btn-submit {
     display: block;
