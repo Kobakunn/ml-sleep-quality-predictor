@@ -45,13 +45,10 @@ def predict():
     else:
         status = "要改善"
 
-    massage = "サンプル"
-
     return render_template(
         "result.html",
         result=result,
-        status=status,
-        message=massage
+        status=status
     )
 
 
