@@ -23,6 +23,13 @@
         .back:hover {
             background-color: rgb(69, 18, 116);
         }
+
+        .card {
+            background-color: #ffffff;
+            border-radius: 12px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+            overflow: hidden;
+        }
     </style>
 </head>
 <body>
@@ -35,15 +42,17 @@
 
     <p>{{ status }}です。</p>
 
-    <!-- <div style="text-align: left; margin-left: 200px; margin-right: 200px;">
-        <hr>
-        <h3>メッセージ</h3>
+    <div style="text-align: left; margin-left: 180px; margin-right: 180px;" class="card">
+        <h3 style="margin-left: 10px;">コメント</h3>
         <ul>
+            {% for message in advice%}
             <li>{{ message }}</li>
+            {% endfor %}
         </ul>
-        <hr>
-    </div> -->
+    </div>
 
-    <a href="{{url_for('index')}}" class="back">戻る</a>
+    <div style="margin-top: 20px;">
+        <a href="{{url_for('index')}}" class="back">戻る</a>
+    </div>
 </body>
 </html>

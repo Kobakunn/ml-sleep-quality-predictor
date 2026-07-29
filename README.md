@@ -200,7 +200,6 @@ EDAとモデル評価を踏まえ、
 - Age
 - Sleep Duration
 - Stress Level
-- Physical Activity Level
 - Heart Rate
 - Daily Steps
 - BMI Category
@@ -275,6 +274,7 @@ EDAでは男女差が確認されましたが、
 - BMI自動計算
 - 睡眠の質予測
 - 推論結果表示
+- 各項目の入力値に基づく睡眠改善アドバイスの表示
 ![Webアプリ](image/webページ.jpeg "Webアプリの写真")
 
 ---
@@ -311,7 +311,6 @@ EDAでは、
 現在は睡眠の質の予測のみを行っていますが、今後は
 
 - SHAPを利用した予測理由の表示
-- 睡眠改善アドバイス
 - 入力履歴の保存
 - 結果の可視化
 

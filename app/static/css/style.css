@@ -3,17 +3,17 @@ body {
     background-color: #dee1f4;
     display: flex;
     justify-content: center;
-    align-items: center;       /* これが原因で要素が真ん中で衝突していました */
+    align-items: center;       
     min-height: 100vh;
     margin: 0;
-    padding: 40px 0;           /* 上下に少し余白を作って窮屈さをなくします */
+    padding: 40px 0;           
     box-sizing: border-box;
 }
 
 .container {
     display: flex;
-    flex-direction: column;    /* 要素を縦に並べる指定 */
-    align-items: center;       /* 中央寄せ */
+    flex-direction: column;    
+    align-items: center;       
     width: 100%;
 }
 
@@ -164,4 +164,70 @@ body {
 /* 非活性時はhoverを無効化 */
 .btn-submit:disabled:hover {
     background-color: #9ca3af;
+}
+
+/* 親要素（位置基準） */
+.tooltip-icon {
+  position: relative;
+  display: inline-block;
+  margin-left: 6px;
+  font-size: 14px;
+  color: #a5b4fc; /* ラベルになじむ薄いパープル */
+  cursor: pointer;
+  user-select: none;
+}
+
+/* ホバー時に表示されるツールチップ本体（吹き出し） */
+.tooltip-icon::after {
+  content: attr(data-tooltip); /* data-tooltipの内容を表示 */
+  position: absolute;
+  bottom: 125%; /* アイコンの少し上に配置 */
+  left: 50%;
+  transform: translateX(-50%);
+  
+  /* デザイン設定 */
+  background-color: #1e1b4b; /* 濃いネイビー/パープル系 */
+  color: #ffffff;
+  font-size: 12px;
+  font-weight: normal;
+  line-height: 1.5;
+  white-space: pre-line; /* 改行を有効にする設定 */
+  text-align: left;
+  
+  padding: 8px 12px;
+  border-radius: 8px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  width: max-content;
+  max-width: 220px;
+  
+  /* 表示のアニメーション設定 */
+  visibility: hidden;
+  opacity: 0;
+  transition: opacity 0.2s ease, transform 0.2s ease;
+  pointer-events: none;
+  z-index: 100;
+}
+
+/* 吹き出し下の小さな三角形（矢印） */
+.tooltip-icon::before {
+  content: '';
+  position: absolute;
+  bottom: 105%;
+  left: 50%;
+  transform: translateX(-50%);
+  border-width: 6px;
+  border-style: solid;
+  border-color: #1e1b4b transparent transparent transparent;
+  
+  visibility: hidden;
+  opacity: 0;
+  transition: opacity 0.2s ease;
+  z-index: 100;
+}
+
+/* マウスホバー時（またはタップ時）にふんわり表示 */
+.tooltip-icon:hover::after,
+.tooltip-icon:hover::before {
+  visibility: visible;
+  opacity: 1;
 }

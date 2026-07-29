@@ -15,9 +15,6 @@
             <p class="description">
                 生活習慣データを入力すると、あなたの睡眠の質を1～10で判定します。
             </p>
-            <!-- <p style="color: red; text-align: center;">
-                ※20歳以上40歳未満の方が対象となっております
-            </p> -->
         </div>
         
         <div class="card">
@@ -54,13 +51,8 @@
                 </div>
 
                 <div class="form-group">
-                    <label for="exercise-time">運動時間 (分)</label>
-                    <input type="number" id="exercise-time" name="physical_activity" class="form-control" value="60" min="0">
-                </div>
-
-                <div class="form-group">
-                    <label for="stress-level">ストレスレベル</label>
-                    <input type="number" id="stress-level" name="stress_level" class="form-control" value="3" min="0" max="10">
+                    <label for="stress-level">ストレスレベル<span class="tooltip-icon" data-tooltip="0(全く無し)〜10(非常に高い)で入力してください。平均的な状態は5です。">ⓘ</span></label>
+                    <input type="number" id="stress-level" name="stress_level" class="form-control" value="5" min="0" max="10">
                 </div>
 
                 <div class="form-group">
@@ -146,7 +138,6 @@
 
             </form>
         </div>
-
     </div>
 
 </body>

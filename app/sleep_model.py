@@ -20,7 +20,6 @@ def calculate_bmi_category(height, weight):
 def create_input_df(
     age,
     sleep_duration,
-    physical_activity,
     stress_level,
     heart_rate,
     daily_steps,
@@ -30,7 +29,6 @@ def create_input_df(
     return pd.DataFrame([{
         "Age": age,
         "Sleep Duration": sleep_duration,
-        "Physical Activity Level": physical_activity,
         "Stress Level": stress_level,
         "BMI Category": bmi_category,
         "Heart Rate": heart_rate,
